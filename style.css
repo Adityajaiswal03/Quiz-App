@@ -1,0 +1,171 @@
+body{
+    background-color: rgba(114, 255, 255, 0.294);
+}
+.home-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width:100vw;
+}
+
+.home-page h1{
+    font-size: 150px;
+    color: rgb(16, 219, 255);
+
+}
+.home-page button{
+    height: 100px;
+    width: 200px;
+    font-size: 50px;
+    text-align: center;
+    color: rgb(0, 242, 255);
+    background-color: white;
+    border-width: 1px;
+    box-shadow:none;
+    border-style: solid;
+    border-color:rgb(0, 242, 255);
+    transition: box-shadow 0.3s ease;
+}
+.home-page button:hover{
+     box-shadow: 0 4px 8px rgb(128, 217, 255);
+}
+.quiz{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+.quiz .question{
+    width: 100vw;
+    height: 15vh;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+.options{
+    display: flex;
+    width: 35vw;
+    height: 5vh;
+    font-size: 25px;
+    background-color: white;
+    margin: 5px;
+    transition: box-shadow 0.3s ease;
+}
+.idx{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 3vw;
+    background-color: rgb(139, 190, 244);
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.choice{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5px;
+    transition: box-shadow 0.3s ease;
+}
+.options:hover{
+    box-shadow: 0 4px 8px rgb(128, 217, 255);
+}
+
+.end_game{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.score_div{
+    display: flex;
+    font-size: 90px;
+    font-weight: bold;
+    color: rgb(89, 189, 255);
+}
+.score_title{
+    margin-right: 10px;
+}
+.game_ended{
+    margin-left: 300px;
+    margin-top: 20px;
+    margin-bottom: 200px;
+    font-size: 90px;
+    font-weight: bold;
+    color: rgb(89, 189, 255);
+}
+.end_game button{
+    margin-top: 10px;
+    height: 60px;
+    width: 130px;
+    background-color: aqua;
+    text-align: center;
+    color: rgb(0, 242, 255);
+    background-color: white;
+    border-width: 1px;
+    box-shadow:none;
+    border-style: solid;
+    border-color:rgb(0, 242, 255);
+    transition: box-shadow 0.3s ease;
+}
+.end_game button:hover{
+     box-shadow: 0 4px 8px rgb(128, 217, 255);
+}
+.score-card{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.score-realtime{
+
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    
+}
+.score_val{
+
+    display: flex;
+    justify-content: center;
+    margin-top: 3px;
+    color: rgb(72, 191, 255);
+}
+.quesNo{
+    font-size: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+    margin-right: 15px;
+    width: 30%;
+}
+.ques_val{
+    
+    display: flex;
+    justify-content: center;
+    margin-top: 3px;
+     color: rgb(72, 191, 255);
+}
+.progress-bar {
+    margin-top: 20px;
+    width: 100%;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    border: solid;
+    border-color: #01ddff;
+    margin-bottom: 20px;
+}
+
+.progress-bar-fill {
+    height: 30px;
+    width: 0;
+    background-color: #01ddff;
+    transition: width 0.5s;
+}
