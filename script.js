@@ -117,6 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
         choiceElements[2].innerText = q.choice3;
         choiceElements[3].innerText = q.choice4;
 
+        let optionClicked = false; 
+
         choiceElements.forEach((choiceElement, index) => {
             let newChoiceElement = choiceElement.cloneNode(true);
             choiceElement.parentNode.replaceChild(
@@ -124,28 +126,41 @@ document.addEventListener("DOMContentLoaded", () => {
                 choiceElement
             );
 
-            newChoiceElement.parentElement.addEventListener("click", () => {
-                if (q.answer === index + 1) {
-                    newChoiceElement.parentElement.style.backgroundColor =
-                        "green";
-                    score++;
-                    valScore.innerText=score*10;
-                    
-                } else {
-                    newChoiceElement.parentElement.style.backgroundColor =
-                        "red";
+            function handleClick() {
+                if (!optionClicked) {
+                    optionClicked = true; 
+
+                    if (q.answer === index + 1) {
+                        newChoiceElement.parentElement.style.backgroundColor =
+                            "green";
+                        score++;
+                        valScore.innerText = score * 10;
+                    } else {
+                        newChoiceElement.parentElement.style.backgroundColor =
+                            "red";
+                    }
+
+                    setTimeout(() => {
+                        newChoiceElement.parentElement.style.backgroundColor =
+                            "white";
+                        no_q++;
+                        valQues.innerText = no_q + "/" + totalQues;
+                        updateProgressBar(no_q, totalQues);
+                        loadQuestion(questionIndex + 1);
+                    }, 1000);
                 }
-                setTimeout(() => {
-                    newChoiceElement.parentElement.style.backgroundColor =
-                        "white";
-                    no_q++;
-                    valQues.innerText = no_q + "/" + totalQues;
-                    updateProgressBar( no_q, totalQues);
-                    loadQuestion(questionIndex + 1);
-                }, 1000);
-            });
+            }
+
+            newChoiceElement.parentElement.addEventListener("click",handleClick);
+
+            function removeClickListener() {
+                newChoiceElement.parentElement.removeEventListener("click",handleClick);
+            }
+
+            newChoiceElement.parentElement.addEventListener("click",removeClickListener);
         });
     }
+
 
     function updateProgressBar(currentIndex, totalQuestions) {
         const progressBarFill = document.querySelector(".progress-bar-fill");
